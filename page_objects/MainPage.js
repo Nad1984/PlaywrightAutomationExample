@@ -45,8 +45,8 @@ class MainPage
 
     async selectMenuItem()
         {
-            // await this.makeupMenuItem.hover();
-            await this.makeupMenuItem.evaluate(element => element.hover());
+            await this.makeupMenuItem.hover({force: true});
+            // await this.makeupMenuItem.evaluate(element => element.hover());
         }
 
     async clickSubMenuItem()
