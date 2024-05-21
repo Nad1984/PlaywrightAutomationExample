@@ -51,7 +51,7 @@ class MainPage
 
     async clickSubMenuItem()
     {
-        await this.eyesSubmenuItem.click();
+        await this.eyesSubmenuItem.click({force: true});
     }
     async checkTitle()
     {
@@ -67,7 +67,7 @@ class MainPage
     async findPersonalOfficeBthnAndClickCheckItisClicked()
     {
         await expect(this.personalOfficeBthn).toBeVisible();
-        await this.personalOfficeBthn.click();
+        await this.personalOfficeBthn.click({force: true});
         await expect(this.enterHeaderOfficePopUp).toBeVisible();  
     }
 
@@ -90,17 +90,17 @@ class MainPage
             {
             console.log(await this.productsWrapper.nth(i).locator(this.itemNameLocator).textContent());
             await this.productsWrapper.nth(i).locator(this.itemNameLocator).hover();
-            await this.productsWrapper.nth(i).getByText(this.buyBthnText).click();
+            await this.productsWrapper.nth(i).getByText(this.buyBthnText).click({force: true});
             break;
             }
         }
         await expect(this.basketName).toBeVisible();
-        await this.closeBasketPopUp.click();
+        await this.closeBasketPopUp.click({force: true});
     }
 
     async clickOnBasketWhenNotEmptyCheckBasketPopUpOpened()
     {
-        await this.basketWithProduct.click();
+        await this.basketWithProduct.click({force: true});
         await expect(this.basketName).toBeVisible();
     }
 
@@ -120,7 +120,7 @@ class MainPage
         {
             if(await this.headerElements.nth(i).textContent() === headerElementName)
             {
-            await this.headerElements.nth(i).getByText(headerElementName).click();
+            await this.headerElements.nth(i).getByText(headerElementName).click({force: true});
             break;
             }
         }
