@@ -14,11 +14,15 @@ jobs:
       with:
         node-version: lts/*
     - name: Install dependencies
-      run: npm ci
+      run: |
+        npm ci
+        npm install --save-dev @cucumber/pretty-formatter @cucumber/cucumber
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx cucumber-js --exit --format json:**/cucumber-report.json
+      run: |
+        npx cucumber-js -f @cucumber/pretty-formatter
+      
       
     # - uses: actions/upload-artifact@v4
     #   if: always()
