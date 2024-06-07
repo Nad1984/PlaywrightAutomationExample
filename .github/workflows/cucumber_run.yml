@@ -18,16 +18,15 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run cucumber gherkin tests
-      run: npx cucumber-js --format json 
-      # --out **/cucumber-report.json
+      run: npx cucumber-js --format json --out **/cucumber-report.json
       
       
     # - uses: actions/upload-artifact@v4
     #   if: always()
-    #   # with:
-      #   name: playwright-report
-      #   path: playwright-report/
-      #   retention-days: 30
+    #   with:
+    #     name: playwright-report
+    #     path: playwright-report/
+    #     retention-days: 30
     - uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
         name: cucumber-report
