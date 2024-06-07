@@ -18,8 +18,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx cucumber-js --exit 
-      # --format html:cucumber-report.html
+      run: npx cucumber-js --exit --format json:**/cucumber-report.json
       
     # - uses: actions/upload-artifact@v4
     #   if: always()
