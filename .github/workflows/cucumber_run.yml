@@ -22,7 +22,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run cucumber gherkin tests
-      run: npx cucumber-js --exit --format json:**/cucumber-report.json
+      run: npx cucumber-js --exit --format html:report.html
       
       # Configure Pages
     - name: Configure GitHub Pages
@@ -31,7 +31,7 @@ jobs:
     - name: Upload Pages Artifact
       uses: actions/upload-pages-artifact@v2
       with:
-        path: playwright-report/
+        path: report.html/
   # Deploy the Pages site
   deploy:
     needs: test
