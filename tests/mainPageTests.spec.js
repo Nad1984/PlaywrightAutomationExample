@@ -42,7 +42,7 @@ test('check if busket is not clickable when empty and clickable if not', async (
 });
 
 
-test('check if header contains 5 elements and click on one element', async ({page})=>
+test('@Flacky check if header contains 5 elements and click on one element', async ({page})=>
 {
   const poManager = new POmanager(page);
   const mainPage = poManager.getMainPage();

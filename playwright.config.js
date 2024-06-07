@@ -16,7 +16,7 @@ module.exports = defineConfig({
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
-  retries: 2,
+  retries: 1,
   workers: 1,
   // /* Retry on CI only */
   // retries: process.env.CI ? 2 : 0,
@@ -29,6 +29,10 @@ module.exports = defineConfig({
     headless: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
+    launchOptions: {
+      // 1
+      args: ["--start-maximized"],
+    },
 
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
@@ -41,7 +45,7 @@ module.exports = defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome']},
     },
 
     // {
