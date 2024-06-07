@@ -37,7 +37,7 @@ jobs:
     needs: test
     environment:
       name: github-pages
-      url: https://nad1984.github.io/PlaywrightAutomationExample/
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
     - name: Deploy to GitHub Pages
