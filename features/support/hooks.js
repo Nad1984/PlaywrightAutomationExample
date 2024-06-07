@@ -10,7 +10,7 @@ const {
   
   Before(async function () {
     const browser = await playwright.chromium.launch({
-      headless: false, args:['--start-maximized']
+      headless: true, args:['--start-maximized']
     });
     
     const context = await browser.newContext({ viewport: null});
