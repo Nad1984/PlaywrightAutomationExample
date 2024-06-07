@@ -37,7 +37,7 @@ jobs:
     needs: test
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://github.com/Nad1984/playwright-report-demo
     runs-on: ubuntu-latest
     steps:
     - name: Deploy to GitHub Pages
