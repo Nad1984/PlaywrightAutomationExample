@@ -31,13 +31,13 @@ jobs:
     - name: Upload Pages Artifact
       uses: actions/upload-pages-artifact@v2
       with:
-        path: report.html/
+        path: report.html
   # Deploy the Pages site
   deploy:
     needs: test
     environment:
       name: github-pages
-      url: https://github.com/Nad1984/playwright-report-demo
+      url: https://nad1984.github.io/PlaywrightAutomationExample/
     runs-on: ubuntu-latest
     steps:
     - name: Deploy to GitHub Pages
