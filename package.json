@@ -13,7 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.43.1",
-    "@types/node": "^20.12.7"
+    "@types/node": "^20.12.7",
+    "typescript": "^5.5.3"
   },
   "dependencies": {
     "@cucumber/cucumber": "^10.8.0"
